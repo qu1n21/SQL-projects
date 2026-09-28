@@ -82,6 +82,6 @@ SUM(h.home_goals) + SUM(a.away_goals) AS "total goals"
 from clubs c
 join matches h on c.club_id = h.home_club_id
 join matches a on c.club_id = a.away_club_id
-group by club_name
+group by club_name;
 ```
 ![Home, away and total goals per club output](Visuals/club-goals.png)
