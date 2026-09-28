@@ -1,7 +1,7 @@
 # Football Club SQL Analysis
 This repository contains SQL exercises and relation database analysis completed during my training.
 
-#Project Overview
+# Project Overview
 This project uses PostgreSQL to design a relational database for football clubs, players and match results. 
 It demonstrates core SQL skills including:
 - Database creation 
