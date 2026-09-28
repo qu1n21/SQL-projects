@@ -17,10 +17,10 @@ The dataset includes three tables:
 - players – player details (name, position, age, club)
 - matches – match results (home/away teams and goals)
 
-The full database creation script can be found in the `Database` folder.
+The full database creation script can be found in the `database` folder.
 
 ## Source Code
-All SQL analysis queries can be found in the `Football-Club-SQL-analysis-queries.sql` file.
+All SQL analysis queries can be found in the `football-club-SQL-analysis-queries.sql` file.
 
 These queries include:
 - Listing players and clubs
@@ -45,7 +45,7 @@ This query uses an INNER JOIN to display player names alongside the club they pl
 ```
 select player_name, club_name from players inner join clubs on players.club_id = clubs.club_id;
 ```
-![Players and their clubs output](Visuals/player-teams.png)
+![Players and their clubs output](outputs/player-teams.png)
 
 ### Counting Players at Each Club
 This query uses COUNT() and GROUP BY to determine how many players are in each club.
@@ -56,7 +56,7 @@ inner join clubs
 on players.club_id=clubs.club_id
 GROUP BY club_name;
 ```
-![Number of players per club output](Visuals/number-of-players.png)
+![Number of players per club output](outputs/number-of-players.png)
 
 ### Average Age of Manchester United Players
 This query uses AVG() to calculate the average age of players at Manchester United.
@@ -69,7 +69,7 @@ on players.club_id=clubs.club_id
 WHERE club_name = 'Manchester United'
 GROUP BY club_name;
 ```
-![Average age of players in Man U output](Visuals/average-age.png)
+![Average age of players in Man U output](outputs/average-age.png)
 
 ### Total Goals Scored by Each Club
 This query combines match data to calculate total goals scored by each club.
@@ -84,4 +84,4 @@ join matches h on c.club_id = h.home_club_id
 join matches a on c.club_id = a.away_club_id
 group by club_name;
 ```
-![Home, away and total goals per club output](Visuals/club-goals.png)
+![Home, away and total goals per club output](outputs/club-goals.png)
