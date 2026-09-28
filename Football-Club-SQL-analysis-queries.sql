@@ -1,50 +1,50 @@
-#Show all players in the players table
+-- Show all players in the players table
 select * from players;
 
-#Display only the player name and position of all positions
+-- Display only the player name and position of all positions
 select player_name, position from players;
 
-#List all the clubs from the clubs table, showing their name and stadium
+-- List all the clubs from the clubs table, showing their name and stadium
 select club_name, stadium from clubs;
 
-#Find the age of "Marcus Rashford"
+-- Find the age of "Marcus Rashford"
 select age from players where player_name = 'Marcus Rashford';
 
-#Show all players who play as a "Forward"
-select * from players where position = 'Forward'
+-- Show all players who play as a "Forward"
+select * from players where position = 'Forward';
 
-#List all players older than 28 
+-- List all players older than 28 
 select * from players where age > 28;
 
-#Find all players that play for Liverpool FC
+-- Find all players that play for Liverpool FC
 select * from players inner join clubs on players.club_id = clubs.club_id where club_name = 'Liverpool FC';
 
-#Show matches where the home team scored more than 1 goal
-select * from matches inner join clubs on matches.home_club_id=clubs.club_id where home_goals > 1
+-- Show matches where the home team scored more than 1 goal
+select * from matches inner join clubs on matches.home_club_id=clubs.club_id where home_goals > 1;
 
-#Show all players ordered by age
+-- Show all players ordered by age
 select * from players ORDER BY age asc;
 
-#Show the top 3 oldest players
+-- Show the top 3 oldest players
 select * from players order by age desc limit 3;
 
-#List all the clubs, sorted by city name
+-- List all the clubs, sorted by city name
 select club_name, city from clubs order by city;
 
-#Show each player's name alongside the club they play for
+-- Show each player's name alongside the club they play for
 select player_name, club_name from players inner join clubs on players.club_id=clubs.club_id;
 select player_name, club_name from players inner join clubs on players.club_id=clubs.club_id order by club_name;
 
-#List all players who play in London-based clubs
+-- List all players who play in London-based clubs
 select player_name, club_name, city from players inner join clubs on players.club_id=clubs.club_id where city = 'London';
 
-#Count how many players belong to each club.
+-- Count how many players belong to each club.
 select club_name, count(player_name) as number_of_players from players inner join clubs on players.club_id=clubs.club_id GROUP BY club_name;
 
-#Find the average age of players at Manchester United.
+-- Find the average age of players at Manchester United.
 select club_name, round(avg(age),0) AS average_player_age from players inner join clubs on players.club_id=clubs.club_id WHERE club_name = 'Manchester United' GROUP BY club_name;
 
-#Show the total number of goals scored by each club in matches (hint: use both home_goals and away_goals).
+-- Show the total number of goals scored by each club in matches (hint: use both home_goals and away_goals).
 select 
 c.club_name,
 SUM(h.home_goals) AS "home goals",
