@@ -45,6 +45,7 @@ This query uses an INNER JOIN to display player names alongside the club they pl
 ```
 select player_name, club_name from players inner join clubs on players.club_id = clubs.club_id;
 ```
+![Players and their clubs output](Visuals/player-teams.png)
 
 ### Counting Players at Each Club
 This query uses COUNT() and GROUP BY to determine how many players are in each club.
@@ -55,6 +56,7 @@ inner join clubs
 on players.club_id=clubs.club_id
 GROUP BY club_name;
 ```
+![Number of players per club output](Visuals/number-of-players.png)
 
 ### Average Age of Manchester United Players
 This query uses AVG() to calculate the average age of players at Manchester United.
@@ -67,6 +69,7 @@ on players.club_id=clubs.club_id
 WHERE club_name = 'Manchester United'
 GROUP BY club_name;
 ```
+![Average age of players in Man U output](Visuals/average-age.png)
 
 ### Total Goals Scored by Each Club
 This query combines match data to calculate total goals scored by each club.
@@ -81,3 +84,4 @@ join matches h on c.club_id = h.home_club_id
 join matches a on c.club_id = a.away_club_id
 group by club_name
 ```
+![Home, away and total goals per club output](Visuals/club-goals.png)
