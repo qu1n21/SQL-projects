@@ -11,8 +11,13 @@ It demonstrates core SQL skills including:
 - Aggregations (COUNT, AVG, SUM)
 - Basic data analysis using SQL
 
-## Dataset
-The dataset includes three tables:
+## Technologies Used
+- SQL
+- PostgreSQL
+- Supabase
+
+## Database
+The database includes three tables:
 - clubs – club information (name, stadium, city)
 - players – player details (name, position, age, club)
 - matches – match results (home/away teams and goals)
